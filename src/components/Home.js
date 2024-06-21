@@ -19,7 +19,7 @@ const Home = () => {
                 console.error("There was an error fetching the products!", error);
             });
 
-        // Check if user is logged in
+        // Check if user is logged in// HOOOOOLAAAA
         const loggedInUser = JSON.parse(localStorage.getItem('user'));
         if (loggedInUser) {
             setUser(loggedInUser);

@@ -8,15 +8,15 @@ import './App.css';
 function App() {
     return (
         <Router>
-            <div className="App">
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/signup" element={<SignUp />} />
-                </Routes>
-            </div>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<SignUp />} />
+            </Routes>
         </Router>
     );
 }
 
 export default App;
+
+
