@@ -18,7 +18,7 @@ const Login = () => {
         });
         const data = await response.json();
         if (response.ok) {
-            localStorage.setItem('user', JSON.stringify({ firstName: data.name, token: data.accessToken }));
+            localStorage.setItem('user', JSON.stringify({ id: data.userId, firstName: data.name, token: data.accessToken }));
             navigate('/');
         } else {
             alert('Login failed');
