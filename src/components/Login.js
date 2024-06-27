@@ -19,6 +19,7 @@ const Login = () => {
         const data = await response.json();
         if (response.ok) {
             localStorage.setItem('user', JSON.stringify({ id: data.userId, firstName: data.name, token: data.accessToken }));
+            localStorage.removeItem('cart'); // Clear the cart when logging in
             navigate('/');
         } else {
             alert('Login failed');

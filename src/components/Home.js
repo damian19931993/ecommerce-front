@@ -19,7 +19,6 @@ const Home = () => {
                 console.error("There was an error fetching the products!", error);
             });
 
-        // Check if user is logged in// HOOOOOLAAAA
         const loggedInUser = JSON.parse(localStorage.getItem('user'));
         if (loggedInUser) {
             setUser(loggedInUser);
@@ -40,6 +39,10 @@ const Home = () => {
         navigate('/');
     };
 
+    const handleProductClick = (productId) => {
+        navigate(`/product/${productId}`);
+    };
+
     const filteredProducts = products.filter(product => 
         product.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -52,6 +55,7 @@ const Home = () => {
                     <a href="/">Home</a>
                     <a href="/products">Products</a>
                     <a href="/contact">Contact</a>
+                    <a href="/cart">Cart</a>
                     {user ? (
                         <div className="user-info">
                             <span>Hola, {user.firstName}</span>
@@ -73,7 +77,9 @@ const Home = () => {
             <div className="product-grid">
                 {filteredProducts.length > 0 ? (
                     filteredProducts.map(product => (
-                        <Product key={product.id} product={product} />
+                        <div key={product.id} onClick={() => handleProductClick(product.id)}>
+                            <Product product={product} showAddToCartButton={false} />
+                        </div>
                     ))
                 ) : (
                     <p>No products available.</p>

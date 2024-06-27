@@ -1,0 +1,43 @@
+/* src/styles/ProductDetail.css */
+.product-detail {
+    display: flex;
+    padding: 20px;
+}
+
+.product-detail-image {
+    width: 300px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.product-detail-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-detail-info h2 {
+    margin: 0 0 10px 0;
+}
+
+.product-detail-info p {
+    margin: 0 0 10px 0;
+}
+
+.product-detail-info input {
+    width: 50px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.product-detail-info button {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.product-detail-info button:hover {
+    background-color: #0056b3;
+}
